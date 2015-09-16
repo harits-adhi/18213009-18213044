@@ -37,7 +37,7 @@ public void run() {
             do {
                 br2 = new BufferedReader(new   InputStreamReader(socket.getInputStream()));
                 out = br2.readLine();
-                System.out.println("Server says : : : " + out);
+                System.out.println("Server says : " + out);
             } while (!out.equals("END"));
         }
     } catch (Exception e) {
