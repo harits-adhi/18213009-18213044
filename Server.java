@@ -28,7 +28,6 @@ public class Server {
 		  br1 = new BufferedReader(new InputStreamReader(System.in));
           pr1 = new PrintWriter(sock.getOutputStream(), true);
           pr1.println(pgn);
-		  System.out.println("List of files : \n 1. a.txt\n 2. b.txt\n 3. c.txt\n");
 		  BufferedReader in = new BufferedReader(new InputStreamReader(sock.getInputStream()));
 		  String message = in.readLine();
 		  System.out.println("message recieve : " + message);
