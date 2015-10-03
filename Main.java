@@ -10,7 +10,7 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-/* Created from combining code from many source by 
+/* Created by combining code from many source by 
  * Harits Adhi Pradhana(18213009) and Andika Fikrisyah Yasin(18213044)
  */
 
@@ -27,11 +27,12 @@ public class Main {
             return s;
     }
    public static void main(String[] args) throws Exception {
-	  Document doc = Jsoup.connect("http://itb.ac.id/").get();
+	  Document doc = Jsoup.connect("http://google.com/").get();
 	  Elements links = doc.select("a[href]");
-	  File fl = new File("D:/progrin/crawler/tmp/input.html");
-      //fl.createNewFile();
+	  //creating the file
+	  File fl = new File("D:/progrin/crawler/tmp/input.html"); //change it according to your needs
       FileWriter ye = new FileWriter(fl);
+	  //write the web page to the file
       ye.write(doc.body().toString());
       ye.flush();
       ye.close();
@@ -41,8 +42,7 @@ public class Main {
       }
       for (Element link : links) { 
     	  doc = Jsoup.connect(link.attr("abs:href")).timeout(30000).ignoreContentType(true).ignoreHttpErrors(true).followRedirects(true).get();
-    	  fl = new File("D:/progrin/crawler/tmp/"+trim(link.text(), 35)+".html");
-    	  //fl.createNewFile();
+    	  fl = new File("D:/progrin/crawler/tmp/"+trim(link.text(), 35)+".html"); //change it according to your needs
     	  ye = new FileWriter(fl);
     	  ye.write(doc.body().toString());
     	  ye.flush();
