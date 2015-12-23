@@ -1,0 +1,225 @@
+@font-face {
+	font-family: regular;
+	src: url(font/OPENSANS-REGULAR.ttf);
+}
+
+body {
+	margin: 0;
+	font-family: regular;
+	background-image:url(img/background.png);
+	background-attachment: fixed;
+}
+
+select:hover {
+	cursor: pointer;
+}
+
+input[type = "submit"] {
+	cursor: pointer;
+}
+
+hr {
+	margin-top: -10px;
+	color: #c3989e;
+	background-color: #c3989e;
+	height: 2px;
+}
+
+.nav-wrapper {
+	width: 100%;
+	height: 48px;
+	padding-top: 5px;
+	background-color: #e2232b;
+	display: inline-block;
+}
+
+.form-sort {
+	margin-left: 630px;
+	position: absolute;
+}
+
+.form-sort input:hover {
+	cursor: pointer;
+}
+
+.form-sort input[type = "submit"] {
+	width: 30px;
+	height: 30px;
+	background: url(img/sort.png) no-repeat;
+	background-position: center center;
+	background-size: 80% 80%;
+	border: 0;
+}
+
+.form-search {
+	margin-left: 1060px;
+	position: absolute;
+}
+
+.form-search input[type = "submit"] {
+	width: 30px;
+	height: 30px;
+	background: url(img/magnifier.png) no-repeat;
+	background-position: center center;
+	background-size: 80% 80%;
+	border: 0;	
+}
+
+.search-box {
+	width: 180px;
+	height: 34px;
+	overflow: hidden;
+}
+
+.search-box input[type = "text"] {
+	width: 164px;
+	height: 28px;
+	padding-left: 10px;
+	border-radius: 10px;
+	font-family: monospace;
+}
+
+.search-box input:focus, input.focus {
+	border: solid 3px #e46d2b;
+}
+
+.nav-option {
+	width: 180px;
+	height: 34px;
+	overflow: hidden;
+	background: url(img/select.png) no-repeat right #e2232b;
+}
+
+.nav-option select {
+	background: transparent;
+	width: 180px;
+	height: 34px;
+	padding: 5px;
+	font-size: 12px;
+	border: 0;
+	-webkit-appearance: none;
+}
+
+.kantin-peta {
+	position: relative;
+	width: 960px;
+	height: 100%;
+	margin-left: 198px;
+	margin-top: 25px;
+}
+
+#nav {
+	list-style: none;
+	float: left;
+	width: 100%;
+	height: 48px;
+	margin: 0;
+}
+
+#nav li {
+	float: left;
+	position:relative;
+	padding-top: 10px;
+	height: 40px;
+}
+
+#nav li ul li{
+	height: 140px;
+}
+
+#data {
+	margin-top: 8px;
+}
+
+#nav ul {
+	background-color: #ffffff;
+	list-style: none;
+	position: absolute;
+	width: 750px;
+	left: -9999px;
+}
+
+#nav ul li {
+	float:none;
+}
+
+#nav li:hover ul {
+	left: 0px;
+}
+
+.borju {
+	position: absolute;
+	top: 149px;
+	left: 391px;
+}
+
+.barak {
+	position: absolute;
+	top: 350px;
+	left: 303px;
+}
+
+.bengkok {
+	position: absolute;
+	top: 367px;
+	left: 460px;
+}
+
+.cbar {
+	position: absolute;
+	top: 202px;
+	left: 344px;
+}
+
+.ctim{
+	position: absolute;
+	top: 273px;
+	left: 344px;
+}
+
+.gbar{
+	position: absolute;
+	top: 81px;
+	left: 409px;
+}
+
+.saraga{
+	position: absolute;
+	top: 237px;
+	left: 650px;
+}
+
+.sbm{
+	position: absolute;
+	top: 63px;
+	left: 625px;
+}
+
+.sf{
+	position: absolute;
+	top: 315px;
+	left: 414px;
+}
+
+.sr{
+	position: absolute;
+	top: 395px;
+	left: 246px;
+}
+
+.tabel {
+	position: relative;
+	border-collapse: collapse;
+	width: 100%;
+	height: 100%;
+	top: 25px;
+	left:152px;
+}
+
+.kantin-container {
+	overflow: hidden;
+}
+
+td{
+	width:200px;
+}

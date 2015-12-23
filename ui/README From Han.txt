@@ -1,0 +1,1 @@
+kalau ada about atau abt di css, itu buat yg 2-column

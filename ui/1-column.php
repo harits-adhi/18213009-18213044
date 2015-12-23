@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Home | KM-ITB </title>
+	<link href = "css/style.css" rel = "stylesheet" type = "text/css"/>
+	<link href="css/association.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/half-slider.css" rel="stylesheet">
+	<script src="js/jquery.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <div class="title">
+					<a class="navbar-brand" href="#">KM-ITB</a>
+				</div>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+               </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+	
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+				<div class="menu-bar">
+					<div class= "logo">
+						<img id="logo-img" src="assets/logo.gif"></img>
+					</div>
+					<div class= "menu">
+							<ul class="nav nav-pills">
+								<li><a href="index.html">Home</a></li>
+								<li><a href="#">Event</a></li>
+								<li><a href="#">Open Data</a></li>
+								<li><a href="#">Kader</a></li>
+							</ul>
+					</div>
+				</div>
+            </div>
+        </div>
+	</div>		
+	<div class="container">
+	<div class="satu">
+		<?php
+		if (isset($_GET["action"]) && isset($_GET["id"]) && isset($_GET["action"]) == "get_info") {
+			$info = file_get_contents('http://localhost/ui/rest-api.php?action=get_info&id=' . $_GET["id"]);
+			$info = json_decode($info,true);
+		}
+		?>
+		<div class="container">
+		<div class="satuenol">
+			<h3>Nama Kantin</h3>
+		</div>
+		</div>
+		<div class="tabel">
+			<table border="3">
+			<tr> 
+				<th>ID</th>
+				<th>Kantin</th>
+				<th>Lokasi</th>
+				<th>Kategori</th>
+				<th>Deskripsi</th>
+			</tr>
+			<tr> 
+				<td> <?php echo $info["id"] ?> </td>
+				<td> <?php echo $info["nama_kantin"] ?> </td>
+				<td> <?php echo $info["lokasi_kantin"] ?> </td>
+				<td> <?php echo $info["kategori"] ?> </td>
+				<td> <?php echo $info["Deskripsi"] ?> </td>
+			</tr>
+			</table>
+		</div>
+		<div class="container">
+		<div class="satuenol">
+			<h3>Daftar Makanan</h3>
+		</div>
+		</div>
+			<div class="tabel">
+			<table border="3">
+			<tr> 
+				<th>Nama</th>
+				<th>Harga</th>
+				<th>Jenis Makanan</th>
+				<th>Deskripsi</th>
+			</tr>
+			<tr> 
+				<td> <?php echo $info["nama"] ?> </td>
+				<td> <?php echo $info["harga"] ?> </td>
+				<td> <?php echo $info["jenis"] ?> </td>
+				<td> <?php echo $info["deskripsi"] ?> </td>
+			</tr>
+			</table>
+			</div>
+		</div>
+		</div>
+	<div class="container">
+	<div class="satu">
+		<div class = "kantin-container">
+			<div class = "kantin-peta">
+				<img src="assets/satu/petacopy.jpg">				
+				<div class="barak"><a href="1-column.php?action=get_info&id=2" data-toggle="barak" onMouseOver="return changeBarak()" onMouseOut= "return changeBarakBack()"><img name="barak" src="assets/satu/barak.png" alt="javascript button"></a></div>
+				<div class="cbar"><a href="1-column.php?action=get_info&id=3" data-toggle="cbar" onMouseOver="return changeCBar()" onMouseOut= "return changeCBarBack()"><img name="cbar" src="assets/satu/ccbarat.png" alt="javascript button"></div>
+				<div class="ctim"><a href="1-column.php?action=get_info&id=4" data-toggle="ctim" onMouseOver="return changeCTim()" onMouseOut= "return changeCTimBack()"><img name="ctim" src="assets/satu/cctimur.png" alt="javascript button"></div>
+				<div class="borju"><a href="1-column.php?action=get_info&id=5" data-toggle="borju" onMouseOver="return changeBorju()" onMouseOut= "return changeBorjuBack()"><img name="borju" src="assets/satu/borju.png" alt="javascript button"></a></div>
+				<div class="gbar"><a href="1-column.php?action=get_info&id=6" data-toggle="gbar" onMouseOver="return changeGBar()" onMouseOut= "return changeGBarBack()"><img name="gbar" src="assets/satu/GKUbarat.png" alt="javascript button"></div>
+				<div class="saraga"><a href="1-column.php?action=get_info&id=10" data-toggle="saraga" onMouseOver="return changeSaraga()" onMouseOut= "return changeSaragaBack()"><img name="saraga" src="assets/satu/saraga.png" alt="javascript button"></div>
+				<div class="sbm"><a href="1-column.php?action=get_info&id=9" data-toggle="sbm" onMouseOver="return changeSBM()" onMouseOut= "return changeSBMBack()"><img name="sbm" src="assets/satu/sbm.png" alt="javascript button"></div>
+				<div class="sf"><a href="1-column.php?action=get_info&id=7" data-toggle="sf" onMouseOver="return changeSF()" onMouseOut= "return changeSFBack()"><img name="sf" src="assets/satu/sf.png" alt="javascript button"></div>
+				<div class="bengkok"><a href="1-column.php?action=get_info&id=8" data-toggle="bengkok" onMouseOver="return changeBengkok()" onMouseOut= "return changeBengkokBack()"><img name="bengkok" src="assets/satu/bengkok.png" alt="javascript button"></div>
+				<div class="sr"><a href="1-column.php?action=get_info&id=1" data-toggle="sr" onMouseOver="return changeSR()" onMouseOut= "return changeSRBack()"><img name="sr" src="assets/satu/sr.png" alt="javascript button"></div>
+			</div>
+		</div>
+	</div>
+	</div>
+	
+	</div>
+	</div>
+	
+	
+    <!-- Page Content -->
+    <div class="container">
+	<div class="center">
+		<div class="social-media">
+			<a href='https://www.facebook.com/ITB.KM'><img id="icon-fb" src="assets/home/icon-fb.png"></img></a>
+			<a href='http://mail.google.com'><img id="icon-mail" src="assets/home/icon-mail.png"></img></a>
+			<a href='https://www.instagram.com/km_itb/'><img id="icon-ig" src="assets/home/icon-ig.png"></img></a>	
+		</div>
+	</div>
+	</div>
+	
+        <!-- Footer -->
+        <footer>
+            <div class="row">
+                <div class="copyright">
+						<p>Sistem dan Teknologi Informasi 2013</p>
+					</div>
+            </div>
+            <!-- /.row -->
+        </footer>
+    <!-- /.container -->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+    <!-- Script to Activate the Carousel -->
+    <script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+    </script>
+	
+	<script>
+	function changeBorju()
+	{
+		document.images["borju"].src= "assets/satu/borju2.png";
+		return true;
+	}
+	function changeBorjuBack()
+	{
+		document.images["borju"].src= "assets/satu/borju.png";
+		return true;
+	}
+	function changeBarak()
+	{
+		document.images["barak"].src= "assets/satu/barak2.png";
+		return true;
+	}
+	function changeBarakBack()
+	{
+		document.images["barak"].src= "assets/satu/barak.png";
+		return true;
+	}
+	function changeCBar()
+	{
+		document.images["cbar"].src= "assets/satu/ccbarat2.png";
+		return true;
+	}
+	function changeCBarBack()
+	{
+		document.images["cbar"].src= "assets/satu/ccbarat.png";
+		return true;
+	}
+	function changeCTim()
+	{
+		document.images["ctim"].src= "assets/satu/cctimur2.png";
+		return true;
+	}
+	function changeCTimBack()
+	{
+		document.images["ctim"].src= "assets/satu/cctimur.png";
+		return true;
+	}
+	function changeGBar()
+	{
+		document.images["gbar"].src= "assets/satu/GKUbarat2.png";
+		return true;
+	}
+	function changeGBarBack()
+	{
+		document.images["gbar"].src= "assets/satu/GKUbarat.png";
+		return true;
+	}
+	function changeSaraga()
+	{
+		document.images["saraga"].src= "assets/satu/saraga2.png";
+		return true;
+	}
+	function changeSaragaBack()
+	{
+		document.images["saraga"].src= "assets/satu/saraga.png";
+		return true;
+	}
+	function changeSBM()
+	{
+		document.images["sbm"].src= "assets/satu/sbm2.png";
+		return true;
+	}
+	function changeSBMBack()
+	{
+		document.images["sbm"].src= "assets/satu/sbm.png";
+		return true;
+	}
+	function changeSF()
+	{
+		document.images["sf"].src= "assets/satu/sf2.png";
+		return true;
+	}
+	function changeSFBack()
+	{
+		document.images["sf"].src= "assets/satu/sf.png";
+		return true;
+	}
+	function changeSR()
+	{
+		document.images["sr"].src= "assets/satu/sr2.png";
+		return true;
+	}
+	function changeSRBack()
+	{
+		document.images["sr"].src= "assets/satu/sr.png";
+		return true;
+	}
+	function changeBengkok()
+	{
+		document.images["bengkok"].src= "assets/satu/bengkok2.png";
+		return true;
+	}
+	function changeBengkokBack()
+	{
+		document.images["bengkok"].src= "assets/satu/bengkok.png";
+		return true;
+	}
+	</script>
+	<script>
+			$(document).ready(function(){
+				$('[data-toggle="barak"]').tooltip({title: "<p>2 <br>Kantin Barak</p>", html: true});
+				$('[data-toggle="sr"]').tooltip({title: "<p>1 <br>Kantin SR</p>", html: true});
+				$('[data-toggle="cbar"]').tooltip({title: "<p>3 <br>Kantin CC Barat</p>", html: true});
+				$('[data-toggle="ctim"]').tooltip({title: "<p>4 <br>Eititu</p>", html: true});
+				$('[data-toggle="borju"]').tooltip({title: "<p>5 <br>Kantin Borju</p>", html: true});
+				$('[data-toggle="gbar"]').tooltip({title: "<p>6 <br>Kantin IWK</p>", html: true});
+				$('[data-toggle="sf"]').tooltip({title: "<p>7 <br>Kantin SF</p>", html: true});
+				$('[data-toggle="bengkok"]').tooltip({title: "<p>8 <br>Kantin Bengkok</p>", html: true});
+				$('[data-toggle="sbm"]').tooltip({title: "<p>9 <br>Kantin SBM</p>", html: true});
+				$('[data-toggle="saraga"]').tooltip({title: "<p>10 <br>Kantin Saraga</p>", html: true});
+			});
+		</script>
+</body>
+
+</html>
